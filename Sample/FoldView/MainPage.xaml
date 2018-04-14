@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoldView.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button  x:Name="btn1" Text="Fold Example 2 Views" />
+            <Button  x:Name="btn2" Text="Fold Example 3 Views" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

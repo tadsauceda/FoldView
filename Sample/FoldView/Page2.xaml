@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoldView.Page2"
+              xmlns:local="clr-namespace:FoldView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="FoldTempleate">
+                <ViewCell>
+                    <local:FoldView View1Height="120" View2Height="150" View3Height="80" IsBackGroundClicked="False" ImageExpand="">
+                        <ContentView x:Name="layout">
+                            <Frame HasShadow="True" CornerRadius="5" Padding="0" BackgroundColor="Chartreuse">
+                                <RelativeLayout>
+                                    <!-- Background -->
+                                    <Image Source="https://destinoinfinito.com/wp-content/uploads/2015/02/Los-Angeles-California.jpg" Aspect="AspectFill"
+                                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+                                    <!-- Text -->
+                                    <StackLayout Padding="10" Orientation="Vertical" VerticalOptions="EndAndExpand"
+                                         RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Property=0}"
+                                         RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Property=0}" >
+                                        <Label Text="Los Angeles"
+                                     FontSize="Large"
+                                     TextColor="White">
+                                        </Label>
+                                        <Label Text="California"
+                                     TextColor="White">
+                                        </Label>
+                                    </StackLayout>
+                                </RelativeLayout>
+                            </Frame>
+                        </ContentView>
+                        <ContentView x:Name="layout2" BackgroundColor="Black">
+                            <StackLayout Padding="10" >
+                                <Label Text="Info"
+                                     FontSize="Small"
+                                     TextColor="White">
+                                </Label>
+                                <Label  FontSize="Micro" HorizontalTextAlignment="Center" Text="Los Angeles is an important center of culture, medicine, agriculture, business, finance, energy, aerospace, science, food processing, media, international trade, and tourism. International tourists regard Los Angeles as most famous for 'Hollywood,' but a long-running trend in favor of outsourcing of film and television production has critically undermined the sector to the point where entertainment and media employ only about 120,000 people in the entire metro area (and most of them work in Burbank or Culver City, not Hollywood)"
+                                     TextColor="White">
+                                </Label>
+                            </StackLayout>
+                        </ContentView>
+                        <ContentView x:Name="layout3" BackgroundColor="#282828">
+
+                            <StackLayout Padding="10" Orientation="Horizontal" >
+                                <Button Margin="5" HeightRequest="50" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Text="More Info" BackgroundColor="Black" TextColor="White" Clicked="OnClick"></Button>
+                            </StackLayout>
+                        </ContentView>
+                    </local:FoldView>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ListView  x:Name="listView" ItemTemplate="{StaticResource FoldTempleate}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    </ContentPage.Content>
+</ContentPage>
